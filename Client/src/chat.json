@@ -1,0 +1,123 @@
+[
+    {
+      "username": "John",
+      "messages": [
+        "Hello",
+        "How are you?",
+        "I'm doing great!",
+        "What about you?",
+        "Any plans for the weekend?"
+      ],
+      "profileImage": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZSUyMHBpY3R1cmV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+      "seenStatus": true
+    },
+    {
+      "username": "Alice",
+      "messages": [
+        "Hi there!",
+        "I'm good, thanks.",
+        "Just finished work.",
+        "Thinking of going for a hike.",
+        "What about you?"
+      ],
+      "profileImage": "https://plus.unsplash.com/premium_photo-1687832783320-35671afbf484?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZSUyMHBpY3R1cmV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+      "seenStatus": false
+    },
+    {
+        "username": "John",
+        "messages": [
+          "Hello",
+          "How are you?",
+          "I'm doing great!",
+          "What about you?",
+          "Any plans for the weekend?"
+        ],
+        "profileImage": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZSUyMHBpY3R1cmV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+        "seenStatus": true
+    },
+    {
+        "username": "Alice",
+        "messages": [
+          "Hi there!",
+          "I'm good, thanks.",
+          "Just finished work.",
+          "Thinking of going for a hike.",
+          "What about you?"
+        ],
+        "profileImage": "https://plus.unsplash.com/premium_photo-1687832783320-35671afbf484?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZSUyMHBpY3R1cmV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+        "seenStatus": false
+    },
+    {
+    "username": "John",
+    "messages": [
+        "Hello",
+        "How are you?",
+        "I'm doing great!",
+        "What about you?",
+        "Any plans for the weekend?"
+    ],
+    "profileImage": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZSUyMHBpY3R1cmV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+    "seenStatus": true
+    },
+    {
+    "username": "Alice",
+    "messages": [
+        "Hi there!",
+        "I'm good, thanks.",
+        "Just finished work.",
+        "Thinking of going for a hike.",
+        "What about you?"
+    ],
+    "profileImage": "https://plus.unsplash.com/premium_photo-1687832783320-35671afbf484?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZSUyMHBpY3R1cmV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+    "seenStatus": false
+    },
+    {
+    "username": "John",
+    "messages": [
+        "Hello",
+        "How are you?",
+        "I'm doing great!",
+        "What about you?",
+        "Any plans for the weekend?"
+    ],
+    "profileImage": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZSUyMHBpY3R1cmV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+    "seenStatus": true
+    },
+    {
+    "username": "Alice",
+    "messages": [
+        "Hi there!",
+        "I'm good, thanks.",
+        "Just finished work.",
+        "Thinking of going for a hike.",
+        "What about you?"
+    ],
+    "profileImage": "https://plus.unsplash.com/premium_photo-1687832783320-35671afbf484?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZSUyMHBpY3R1cmV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+    "seenStatus": false
+    },
+    {
+    "username": "John",
+    "messages": [
+        "Hello",
+        "How are you?",
+        "I'm doing great!",
+        "What about you?",
+        "Any plans for the weekend?"
+    ],
+    "profileImage": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZSUyMHBpY3R1cmV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+    "seenStatus": true
+    },
+    {
+        "username": "Alice",
+        "messages": [
+          "Hi there!",
+          "I'm good, thanks.",
+          "Just finished work.",
+          "Thinking of going for a hike.",
+          "What about you?"
+        ],
+        "profileImage": "https://plus.unsplash.com/premium_photo-1687832783320-35671afbf484?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZSUyMHBpY3R1cmV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+        "seenStatus": false
+    }
+]
+  

@@ -6,18 +6,17 @@ require("dotenv").config();
 
 // config
 if (process.env.NODE_ENV !== "PRODUCTION") {
-  require("dotenv").config({ path: "config.env" });
+  require("dotenv").config({ path: ".env" });
 }
 
 const app = express();
 
 app.use(express.json);
 app.use(cookieParser());
+app.use(bodyParser.json ({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// connect databases
 
-// require('./server/database/user');
 
 //import routes
 

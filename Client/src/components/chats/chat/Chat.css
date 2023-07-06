@@ -1,0 +1,89 @@
+.chat--container{
+   position: relative;
+   left: 70px;
+   background-color: #0e0b1a;
+   width: 320px;
+}
+
+.chat--heading{
+    position: relative;
+    padding: 6px 20px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.chat--heading p{
+    color: white;
+    font-size: 20px;
+
+}
+
+.chat--user--search--container{
+    margin-bottom: 20px;
+}
+
+.chat--user--search{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 20px;
+    /* border: 1px solid rgba(255, 255, 255, 0.7); */
+    border-radius: 20px;
+    padding: 0px 4px;
+    width: 270px;
+    height: 34px;
+    background-color: rgb(62, 62, 62);
+}
+
+.chat--user--search input{
+    background-color: transparent;
+    height: 100%;
+    width: 90%;
+    outline: none;
+    border: none;
+    color: rgb(150, 150, 150);
+    font-weight: 300;
+}
+
+.chat--user--search input:focus, .icon--user--search svg:focus {
+    color: white;
+  }
+
+.icon--user--search svg{
+    position: relative;
+    top: 2px;
+    left: 6px;
+    color: rgb(150, 150, 150);
+}
+
+
+.chat--wrapper{
+    position: relative;
+    height: 100vh;
+    scroll-behavior: smooth;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    scrollbar-width: 3px; /* Set the width of the scrollbar */
+    scrollbar-color: #393053 #F8F8F8;
+}
+
+
+.chat--wrapper::-webkit-scrollbar {
+    width: 4px; /* Set the width of the scrollbar */
+  }
+  
+  .chat--wrapper::-webkit-scrollbar-thumb {
+    background-color: #635985; /* Set the color of the scrollbar thumb */
+    border-radius: 4px; /* Set the border radius of the scrollbar thumb */
+  }
+  
+  .chat--wrapper::-webkit-scrollbar-track {
+    background-color: transparent; /* Set the color of the scrollbar track */
+  }
+
+.chat--inner-wrapper{
+    margin-bottom: 200px;
+}

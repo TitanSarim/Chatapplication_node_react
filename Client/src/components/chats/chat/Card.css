@@ -1,0 +1,89 @@
+.chat--card--container{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #0e0b1a;
+    width: 280px;
+    height: 60px;
+    padding: 6px 20px;
+    border-top: 1px solid rgb(47, 47, 47);
+    cursor: pointer;
+    transition: all 500ms;
+}
+
+.chat--card--container:hover{
+    background-color: #07060d;
+}
+
+
+.chat--card--wrapper{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+
+.chat--card--img{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 1px;
+}
+
+.chat--card--img img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.chat--card--name {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+
+}
+
+.chat--card--name p{
+    color: rgb(228, 228, 228);
+    font-weight: 500;
+    font-size: 15px;
+}
+.chat--card--name span{
+    color: rgb(150, 150, 150);
+    font-size: 13px;
+}
+
+.chat--card--date{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 10px;
+}
+
+.chat--card--date>p{
+    font-size: 13px;
+    color: rgb(196, 196, 196);
+}
+
+.chat--card--status{
+    background-color: rgba(59, 255, 216, 0.774);
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.chat--card--status p{
+    padding: 3px 0px;
+    font-size: 11px;
+}

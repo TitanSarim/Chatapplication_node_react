@@ -1,0 +1,74 @@
+.sidebar--container{
+    position: absolute;
+    height: 100vh;
+    background-color: #18122B;
+    width: 70px;
+}
+
+.sidebar--wrapper{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 20px 0px;
+}
+
+.sidebar--logo p{
+    font-size: 17px;
+    font-weight: 500;
+    color: white;
+}
+
+.sidebar--breaker hr{
+    width: 50px;
+    border: 0.09rem solid #635985 !important;
+}
+
+.sidebar--userdp img{
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+}
+
+
+.sidebar--group{
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px;
+    width: 60px;
+}
+
+
+.sidebar--chats svg, .sidebar--calls svg{
+    color: white;
+}
+
+.sidebar--settings img{
+    width: 20px;
+}
+
+.sidebar--logout img{
+    width: 20px;
+}
+
+/*  */
+.sidebar--chats a{
+    text-decoration: none;
+}
+.sidebar--chats a:hover, 
+.sidebar--calls a:hover,
+.sidebar--settings a:hover,
+.sidebar--logout a:hover{
+    background-color: #393053;
+    padding: 13px 8px 4px 8px;
+    border-radius: 4px;
+}
+
+.nav-active{
+    background-color: #393053;
+    padding: 13px 8px 4px 8px;
+    border-radius: 4px;
+}
