@@ -1,9 +1,12 @@
-const ErrorHander = require("../utils/errorhander");
+const ErrorHander = require("../utils/errorHandler");
 const catchAsyncError = require("./catchAsyncError");
 const jwt  = require("jsonwebtoken");
-const User  = require("../models/userModel");
+const { PrismaClient } = require('@prisma/client');
 
-exports.isAuthenticatedUser = catchAsyncError(async(req, res, next) =>{
+const prisma = new PrismaClient();
+
+
+const isAuthenticatedUser = catchAsyncError(async(req, res, next) =>{
 
     const {token }= req.cookies;
 
@@ -11,25 +14,35 @@ exports.isAuthenticatedUser = catchAsyncError(async(req, res, next) =>{
         return next(new ErrorHander("Please login to access this resource", 401))
     }   
 
-    const decodedData = jwt.verify(token, process.env.JWT_SECRET);
+    try{
 
-   req.user =  await User.findById(decodedData.id);
+      const decodedData = jwt.verify(token, process.env.JWT_SECRET);
 
-    next()
+      const user = await prisma.user.findUnique({
+        where: {userid: decodedData.userid},
+        select: {userid: true, email: true, username: true,}
+      })
+
+      if(!user){
+        return next(new ErrorHander("User not found", 401))
+      }
+
+      const userData = {
+        userid: user.userid,
+        email: user.email,
+        username: user.username
+      }
+
+
+      req.user = userData
+      next();
+
+    }catch(error){
+      return next(new ErrorHander(error, 403))
+    }
 
 });
 
-exports.authorizeRoles = (...roles) => {
-    return (req, res, next) => {
-      if (!roles.includes(req.user.role)) {
-        return next(
-          new ErrorHander(
-            `Role: ${req.user.role} is not allowed to access this resouce `,
-            403
-          )
-        );
-      }
-  
-      next();
-    };
-  };
+module.exports = {
+  isAuthenticatedUser
+}

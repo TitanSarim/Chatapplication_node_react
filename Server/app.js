@@ -2,24 +2,21 @@ const cookieParser = require("cookie-parser");
 const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
-require("dotenv").config();
 
-// config
-if (process.env.NODE_ENV !== "PRODUCTION") {
-  require("dotenv").config({ path: ".env" });
-}
 
 const app = express();
 
-app.use(express.json);
+app.use(express.json());
 app.use(cookieParser());
-app.use(bodyParser.json ({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 
 
 //import routes
+const user = require('./routes/userRoute')
 
 //use routes
+app.use("/api/v1", user)
 
 module.exports = app;

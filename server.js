@@ -1,6 +1,11 @@
 const app = require("./Server/app");
-const connectDatabase = require("./Server/database/database")
+require('dotenv').config()
 const cors = require('cors')
+
+
+
+
+app.use(cors())
 
 
 // handling uncought Exception
@@ -10,19 +15,15 @@ process.on("uncaughtException", (err) => {
   process.exit(1);
 });
 
-app.use(cors())
 
 // config
 if (process.env.NODE_ENV !== "PRODUCTION") {
-  require("dotenv").config({ path: "Server/.env" });
+  require("dotenv").config({ path: ".env" });
 }
-
-
-connectDatabase()
 
 //server port
 const server = app.listen(process.env.PORT, () => {
-  console.log(`Server is running on http://localhost:3100`);
+  console.log(`Server is running on http://localhost:${process.env.PORT}`);
 });
 
 
