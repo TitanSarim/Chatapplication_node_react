@@ -10,11 +10,43 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User{
-  userid Int @id @default(autoincrement())
-  email String @unique
-  username String @unique
-  password String
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+model User {
+  userid    Int      @id @default(autoincrement())
+  email     String   @unique
+  username  String   @unique
+  password  String
+  Particepent Particepent[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Conversation {
+  conversation_id Int @unique @id @default(autoincrement())
+  sender_id       Int
+  receiver_id     Int
+  createdAt       DateTime   @default(now())
+  updatedAt       DateTime   @updatedAt
+  Messages        Messages[]
+  Particepent     Particepent[]
+}
+
+model Particepent {
+  particepent_id  Int @id @default(autoincrement())
+  conversation_id Conversation @relation(fields: [conversation], references: [conversation_id])
+  conversation    Int
+  user_id         User @relation(fields: [user], references: [userid])
+  user            Int
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model Messages {
+  message_id      Int @id @default(autoincrement())
+  conversation_id Conversation @relation(fields: [conversation], references: [conversation_id])
+  conversation    Int
+  sender_id       Int
+  receiver_id     Int
+  message         String @db.VarChar(2500)
+  createdAt       DateTime     @default(now())
+  updatedAt       DateTime     @updatedAt
 }

@@ -15,8 +15,13 @@ app.use(bodyParser.json());
 
 //import routes
 const user = require('./routes/userRoute')
+const conversation = require('./routes/conversationRoute')
 
 //use routes
 app.use("/api/v1", user)
+app.use("/api/v1", conversation)
+
+
+
 
 module.exports = app;
