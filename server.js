@@ -1,8 +1,9 @@
 const app = require("./Server/app");
 require('dotenv').config()
 const cors = require('cors')
-
-
+const { setIO } = require('./socket');
+const http = require('http').Server(app)
+const io = require('socket.io')(http);
 
 
 app.use(cors())
@@ -21,10 +22,26 @@ if (process.env.NODE_ENV !== "PRODUCTION") {
   require("dotenv").config({ path: ".env" });
 }
 
+
+// websocket
+const ios =  io.on('connection', socket=> {
+  console.log(socket.id);
+  console.log('User id connected');
+
+  socket.on('disconnect', () =>{
+    console.log("A user is diconnected");
+  })
+
+})
+setIO(ios)
+// websocketend
+
+
 //server port
-const server = app.listen(process.env.PORT, () => {
+const server = http.listen(process.env.PORT, () => {
   console.log(`Server is running on http://localhost:${process.env.PORT}`);
 });
+
 
 
 

@@ -16,11 +16,12 @@ app.use(bodyParser.json());
 //import routes
 const user = require('./routes/userRoute')
 const conversation = require('./routes/conversationRoute')
+const message = require('./routes/messageRoute')
 
 //use routes
 app.use("/api/v1", user)
 app.use("/api/v1", conversation)
-
+app.use("/api/v1", message)
 
 
 

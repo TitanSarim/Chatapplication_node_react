@@ -1,15 +1,18 @@
 const express = require('express')
 const {isAuthenticatedUser} = require('../middleware/auth')
-const {sendMessage} = require('../controllers/messageController') 
+const {sendMessage, getAllMessages} = require('../controllers/messageController') 
+const { getIO } = require('../../socket');
+
 
 const router = express.Router();
+const io = getIO();
 
+router.route('/sendMessage/:userid').post(isAuthenticatedUser, (req, res, next) => {
+    sendMessage(req, res, next, io);
+});
 
-router.route('/sendMessage/:userid').post(isAuthenticatedUser, sendMessage)
+router.route('/allmessages').get(isAuthenticatedUser, getAllMessages)
 
-// router.route('/allConversations').get(isAuthenticatedUser, getAllConversations)
-
-// router.route('/singleConversation').get(isAuthenticatedUser, getConversation)
 
 
 module.exports = router
