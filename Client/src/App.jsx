@@ -4,7 +4,7 @@ import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 import SideBar from './components/utils/SideBar';
 import Chat from './components/chats/chat/Chat';
-
+import ProtectedRoute from './components/utils/ProtectedRoute';
 
 function App() {
 
@@ -20,9 +20,14 @@ function App() {
       <Route path="/login" element={<Login/>} />
       <Route path="/register" element={<Register/>} />
       
-      <Route path="/" element={<Chat/>} />
-
     </Routes>
+
+    <Routes>
+      <Route element={<ProtectedRoute/>}>
+        <Route path="/" element={<Chat/>} />
+      </Route>
+    </Routes>
+
 
     </BrowserRouter>
      

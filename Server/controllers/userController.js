@@ -13,6 +13,7 @@ const resgisterUser = catchAsyncError(async(req, res, next) => {
 
     const {username, email, password} = req.body;
 
+
     try {
 
         const emails = await prisma.user.findUnique({
@@ -56,6 +57,9 @@ const resgisterUser = catchAsyncError(async(req, res, next) => {
 
 
 })
+
+
+
 
 const loginUser = catchAsyncError(async(req, res, next) => {
 

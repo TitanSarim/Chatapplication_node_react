@@ -6,9 +6,9 @@ const {resgisterUser, loginUser, loggedUserProfile, searchUsersByUsername, getUs
 const router = express.Router();
 
 
-router.route("/register").post(resgisterUser, isAuthenticatedUser)
+router.route("/register").post(resgisterUser)
 
-router.route('/loggedin').post(loginUser, isAuthenticatedUser)
+router.route('/loggedIn').post(loginUser, isAuthenticatedUser)
 
 router.route('/userDetail').get(isAuthenticatedUser, loggedUserProfile)
 

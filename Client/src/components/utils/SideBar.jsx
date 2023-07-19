@@ -4,12 +4,21 @@ import {PiChatCircleTextFill, PiPhoneCallLight} from 'react-icons/pi'
 import logout from '../../assets/logout.png'
 import setting from '../../assets/setting.png'
 
+import { useSelector } from "react-redux";
+import store from "../../store";
+import {userLogOut } from "../../action/userAction";
+
+
 import './SideBar.css'
 
 const SideBar = () => {
 
   const location = useLocation();
 
+
+  const handleLogout = () => {
+     store.dispatch(userLogOut());
+  };
 
   return (
     <div className='sidebar--container'>
@@ -60,11 +69,12 @@ const SideBar = () => {
             <img src={setting} alt="setting" />
           </Link>
         </div>
+
         <div className='sidebar--logout'>
-          <Link>
+          <Link onClick={handleLogout}>
             <img src={logout} alt="logout" />
           </Link>
-        </div>
+        </div> 
 
        </div>
 

@@ -2,9 +2,16 @@ const cookieParser = require("cookie-parser");
 const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 
 
 const app = express();
+
+// Enable CORS for all routes
+app.use(cors({
+    origin: 'http://localhost:5173'
+}));
+  
 
 app.use(express.json());
 app.use(cookieParser());

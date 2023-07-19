@@ -33,7 +33,6 @@ const Login = () => {
 
   const loginSubmit = (e) => {
     e.preventDefault();
-    
     dispatch(login(email, password))
 
   }
@@ -57,12 +56,12 @@ const Login = () => {
 
               <div className="inputGroup">
                 <label htmlFor="email">Email</label>
-                <input type="text" placeholder='Email' required value={email} onChange={(e) => setLoginEmail(e.target.value.toLowerCase())}/>
+                <input type="text" placeholder='Email' value={email} onChange={(e) => setLoginEmail(e.target.value.toLowerCase())} required/>
               </div>
 
               <div className="inputGroup">
                 <label htmlFor="password">Password</label>
-                <input type="password" placeholder='Password' required value={password} onChange={(e) => setLoginPassword(e.target.value)}/>
+                <input type="password" placeholder='Password' value={password} onChange={(e) => setLoginPassword(e.target.value)} required/>
               </div>
 
               <div className='forget_password'>

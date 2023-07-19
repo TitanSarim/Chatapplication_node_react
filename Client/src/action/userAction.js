@@ -23,7 +23,7 @@ export const login = (email, password) => async (dispatch) => {
         
         const config = { headers: { "Content-Type": "application/json" } };
 
-        const {data} = await axios.post(`/api/v1/loggedin`, 
+        const {data} = await axios.post(`/api/v1/loggedIn`, 
             {email, password},
             config
         )
@@ -38,15 +38,18 @@ export const login = (email, password) => async (dispatch) => {
 
 
 
-export const register = (userData) => async (dispatch) => {
+export const register = (myForm) => async (dispatch) => {
+
+
 
     try {
         dispatch({type: REGISTER_REQUEST});
-        
-        const config = { headers: { "Content-Type": "application/form-data" } };
 
-        const {data} = await axios.post(`/api/v1/userRegister`, 
-            userData,
+        
+        const config = { headers: { "Content-Type": "application/json" } };
+
+        const {data} = await axios.post(`/api/v1/register`, 
+            myForm,
             config
         )
 
@@ -58,6 +61,24 @@ export const register = (userData) => async (dispatch) => {
 
 }
 
+
+
+export const userLogOut = () => async (dispatch) => {
+
+    try {
+
+
+        await axios.get(`/api/v1/logout`);
+
+        dispatch({
+            type: LOGOUT_USER_SUCCESS,
+        })
+        
+    } catch (error) {
+        dispatch({type: LOGOUT_USER_FAIL, payload: error.response.data.message});
+    }
+
+}
 
 export const clearErrors = () => async (dispatch) => {
 

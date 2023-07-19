@@ -6,8 +6,9 @@ const http = require('http').Server(app)
 const io = require('socket.io')(http);
 
 
-app.use(cors())
-
+app.use(cors({
+  origin: 'http://localhost:5173'
+}));
 
 // handling uncought Exception
 process.on("uncaughtException", (err) => {
