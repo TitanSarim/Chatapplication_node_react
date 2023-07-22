@@ -1,9 +1,13 @@
 
 import './Card.css'
 
-const Card = ({data}) => {
+const Card = (data) => {
 
-    console.log(data.profileImage);
+    console.log(data);
+
+    const conversation = data?.data;
+    const userInfo = data?.data?.receiverUser
+
 
   return (
     <div className='chat--card--container'> 
@@ -13,7 +17,7 @@ const Card = ({data}) => {
                 <img src={data.profileImage}/>
             </div>
             <div className='chat--card--name'>
-                <p>{data.username}</p>
+                <p>{userInfo.username}</p>
                 <span>ok byee</span>
             </div>
         </div>

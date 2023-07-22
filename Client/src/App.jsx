@@ -12,23 +12,21 @@ function App() {
     <>
 
     <BrowserRouter>
+     
+      <SideBar />
+     
+      <Routes>
 
-      <SideBar/>
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
 
-    <Routes>
-
-      <Route path="/login" element={<Login/>} />
-      <Route path="/register" element={<Register/>} />
-      
-    </Routes>
-
-    <Routes>
-      <Route element={<ProtectedRoute/>}>
-        <Route path="/" element={<Chat/>} />
-      </Route>
-    </Routes>
-
-
+        {/* Use the ProtectedRoute component */}
+        <Route path="/" element={<ProtectedRoute />}>
+          <Route index element={<Chat />} />
+        </Route>
+        
+      </Routes>
+    
     </BrowserRouter>
      
     </>

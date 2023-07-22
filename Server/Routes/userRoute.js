@@ -8,7 +8,7 @@ const router = express.Router();
 
 router.route("/register").post(resgisterUser)
 
-router.route('/loggedIn').post(loginUser, isAuthenticatedUser)
+router.route('/loggedIn').post(loginUser)
 
 router.route('/userDetail').get(isAuthenticatedUser, loggedUserProfile)
 

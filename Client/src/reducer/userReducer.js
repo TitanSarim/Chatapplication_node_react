@@ -10,10 +10,12 @@ import {
     
     CLEAR_ERRORS
 } from '../constants/userConstants'
+import Cookies from 'js-cookie';
+
 
 export const userReducer = (state = {user: []}, action) =>{
 
-
+    const token = Cookies.get('token');
 
     switch(action.type){
 
@@ -29,7 +31,7 @@ export const userReducer = (state = {user: []}, action) =>{
             return{
                 ...state,
                 loading: false,
-                isAuthenticated: true,
+                isAuthenticated: !!token,
                 user: action.payload,
             }
 

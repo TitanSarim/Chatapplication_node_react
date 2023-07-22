@@ -1,9 +1,30 @@
+import React,{useEffect, useState} from 'react'
 import './Chat.css'
-import data from '../../../chat.json'
+//import data from '../../../chat.json'
 import Card from './Card';
 import {TfiSearch} from 'react-icons/tfi'
+import {useSelector, useDispatch} from 'react-redux';
+import {getConversations, clearErrors} from '../../../action/conversationAction'
+
+
 
 const Chat = () => {
+
+    const dispatch = useDispatch();
+
+    const {data, error, loading} = useSelector(state=>state.conversations);
+
+
+    useEffect(() =>{
+
+        // if(error){
+        //   alert.error(error)
+        //   dispatch(clearErrors());
+        // }
+
+        dispatch(getConversations());
+
+    }, [dispatch])
 
 
   return (
