@@ -132,12 +132,15 @@ const updateProfile = catchAsyncError(async(req, res, next) => {
 
     try {
 
-        const userId = req.user.userid
+        //const userId = req.user.userid
 
-        console.log(req.file.image);
+        const file = req.file
+        console.log(file.key);
+      
+
         
     } catch (error) {
-        
+        return next(new ErrorHander(error, 500));s
     }
 
 })

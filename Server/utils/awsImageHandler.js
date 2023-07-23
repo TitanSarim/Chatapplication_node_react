@@ -1,16 +1,16 @@
-const multer = require("multer");
-const multerS3 = require("multer-s3");
-const AWS = require("aws-sdk");
-require('aws-sdk/lib/maintenance_mode_message').suppress = true;
+const aws = require('aws-sdk')
+const multer = require('multer')
+const multerS3 = require('multer-s3');
 const path = require('path');
+require('aws-sdk/lib/maintenance_mode_message').suppress = true;
 
 
-const s3Config = new AWS.S3({
+
+const s3Config = new aws.S3({
     accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-    secretAccessKey: process.env.AWS_SECRET_KEY,
-    bucket: process.env.AWS_S3_BUCKET_NAME,
+    secretAccessKey: process.env.AWS_SCRET_KEY,
+    Bucket: process.env.AWS_S3_BUCKET_NAME
 });
-
 
 const avatarS3Config = multerS3({
     s3: s3Config,
@@ -30,3 +30,4 @@ const avatarS3Config = multerS3({
 exports.uploadAvatar = multer({
     storage: avatarS3Config,
 });
+
