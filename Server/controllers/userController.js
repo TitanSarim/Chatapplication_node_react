@@ -127,6 +127,22 @@ const loggedUserProfile = catchAsyncError(async(req, res, next)=>{
 
 })
 
+
+const updateProfile = catchAsyncError(async(req, res, next) => {
+
+    try {
+
+        const userId = req.user.userid
+
+        console.log(req.file.image);
+        
+    } catch (error) {
+        
+    }
+
+})
+
+
 const searchUsersByUsername = catchAsyncError(async(req, res, next) => {
 
     try {
@@ -210,5 +226,6 @@ module.exports = {
     loggedUserProfile,
     logout,
     searchUsersByUsername,
-    getUserDetailById
+    getUserDetailById,
+    updateProfile
 }

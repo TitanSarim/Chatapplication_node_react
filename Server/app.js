@@ -7,16 +7,19 @@ const cors = require("cors");
 
 const app = express();
 
+app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cookieParser());
+app.use(bodyParser.json());
+
+
+
+
 // Enable CORS for all routes
 app.use(cors({
     origin: 'http://localhost:5173'
 }));
-  
 
-app.use(express.json());
-app.use(cookieParser());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
 
 
 
