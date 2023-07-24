@@ -28,13 +28,16 @@ const resgisterUser = catchAsyncError(async(req, res, next) => {
             return next (new ErrorHander('User with email or username already exists', 401))
         }
 
+        const avatar = "[]"
+
         const hashedPassword = await bcrypt.hash(password, 10)
 
         const user = await prisma.user.create({
             data:{
                 username,
                 email,
-                password: hashedPassword
+                password: hashedPassword,
+                avatar: avatar
             }
         })
 
@@ -57,7 +60,6 @@ const resgisterUser = catchAsyncError(async(req, res, next) => {
 
 
 })
-
 
 
 
@@ -99,6 +101,8 @@ const loginUser = catchAsyncError(async(req, res, next) => {
 
 })
 
+
+
 const loggedUserProfile = catchAsyncError(async(req, res, next)=>{
 
     try {
@@ -128,15 +132,30 @@ const loggedUserProfile = catchAsyncError(async(req, res, next)=>{
 })
 
 
+
 const updateProfile = catchAsyncError(async(req, res, next) => {
 
     try {
 
-        //const userId = req.user.userid
+        const userId = req.user.userid
 
         const file = req.file
-        console.log(file.key);
+        const location = file.location
       
+        const updatedAvatar = await prisma.user.update({
+            where: {
+                userid: userId,    
+            },
+            data: {
+                avatar: location
+            }
+        })
+
+        res.status(200).json({
+            success: true,
+            message: "Profile Image added Successfully",
+            updatedAvatar
+        })
 
         
     } catch (error) {
@@ -144,6 +163,7 @@ const updateProfile = catchAsyncError(async(req, res, next) => {
     }
 
 })
+
 
 
 const searchUsersByUsername = catchAsyncError(async(req, res, next) => {
@@ -177,6 +197,7 @@ const searchUsersByUsername = catchAsyncError(async(req, res, next) => {
 })
 
 
+
 const getUserDetailById = catchAsyncError(async(req, res, next) => {
 
 
@@ -205,6 +226,7 @@ const getUserDetailById = catchAsyncError(async(req, res, next) => {
     }
 
 })
+
 
 
 const logout = async(req, res) => {

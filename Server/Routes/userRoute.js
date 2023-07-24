@@ -11,7 +11,7 @@ router.route("/register").post(resgisterUser)
 
 router.route('/loggedIn').post(loginUser)
 
-router.route('/updateProfile').put(uploadAvatar.single('avatar'), updateProfile)
+router.route('/updateProfile').put(uploadAvatar.single('avatar'), isAuthenticatedUser, updateProfile)
 
 router.route('/userDetail').get(isAuthenticatedUser, loggedUserProfile)
 
